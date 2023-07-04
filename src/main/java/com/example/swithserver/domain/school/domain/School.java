@@ -8,7 +8,6 @@ import javax.persistence.*;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-
 @Entity
 public class School {
 
@@ -18,4 +17,5 @@ public class School {
 
     @Column(length = 20, nullable = false)
     private String name;
+
 }

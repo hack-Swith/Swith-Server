@@ -10,9 +10,9 @@ import javax.persistence.*;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor
 @Entity
 public class Teacher {
+
     @Id
     @Column(length = 10)
     private String id;
@@ -23,4 +23,5 @@ public class Teacher {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(nullable = false, name = "school_id")
     private School school;
+
 }
