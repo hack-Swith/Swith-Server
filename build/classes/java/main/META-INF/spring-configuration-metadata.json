@@ -1,0 +1,27 @@
+{
+  "groups": [
+    {
+      "name": "jwt",
+      "type": "com.example.swithserver.global.security.jwt.JwtProperties",
+      "sourceType": "com.example.swithserver.global.security.jwt.JwtProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "jwt.access-exp",
+      "type": "java.lang.Long",
+      "sourceType": "com.example.swithserver.global.security.jwt.JwtProperties"
+    },
+    {
+      "name": "jwt.refresh-exp",
+      "type": "java.lang.Long",
+      "sourceType": "com.example.swithserver.global.security.jwt.JwtProperties"
+    },
+    {
+      "name": "jwt.secret",
+      "type": "java.lang.String",
+      "sourceType": "com.example.swithserver.global.security.jwt.JwtProperties"
+    }
+  ],
+  "hints": []
+}
