@@ -1,23 +1,24 @@
-package com.example.swithserver.domain.inspection;
+package com.example.swithserver.domain.inspection.domain;
 
+import com.example.swithserver.domain.inspection.domain.survey.Survey;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 @Entity
 public class Inspection {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
+    @Embedded
+    @Column(nullable = false)
+    private Survey survey;
 }
