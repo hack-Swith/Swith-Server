@@ -1,6 +1,6 @@
 package com.example.swithserver.global.security.auth;
 
-import com.example.swithserver.domain.user.domain.User;
+import com.example.swithserver.domain.student.domain.Student;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
@@ -12,7 +12,7 @@ import java.util.Collection;
 @RequiredArgsConstructor
 public class AuthDetails implements UserDetails {
 
-    private final User user;
+    private final Student student;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -26,7 +26,7 @@ public class AuthDetails implements UserDetails {
 
     @Override
     public String getUsername() {
-        return user.getAccountId();
+        return student.getId();
     }
 
     @Override

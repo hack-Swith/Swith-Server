@@ -1,4 +1,4 @@
-package com.example.swithserver.domain.user.exception;
+package com.example.swithserver.domain.student.exception;
 
 
 import com.example.swithserver.global.error.CustomException;

@@ -5,10 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2cad34cf-8bc1-4a5d-a032-d0880d895967" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/swithserver/SwithServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/swithserver/SwithServerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/swithserver/domain/user/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/swithserver/domain/student/domain/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/swithserver/domain/user/domain/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/swithserver/domain/student/domain/repository/StudentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/swithserver/domain/user/exception/PasswordMismatchException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/swithserver/domain/student/exception/PasswordMismatchException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/swithserver/domain/user/exception/UserExistException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/swithserver/domain/student/exception/UserExistException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/swithserver/domain/user/exception/UserNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/swithserver/domain/student/exception/UserNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/swithserver/domain/user/facade/UserFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/swithserver/domain/student/facade/StudentFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/swithserver/global/security/auth/AuthDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/swithserver/global/security/auth/AuthDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/swithserver/global/security/auth/AuthDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/swithserver/global/security/auth/AuthDetailsService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +38,15 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -47,6 +62,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "/Users/kimseongwon/Desktop/gitHub/Swith-Server/src/main/java/com/example/swithserver/domain"
   }
@@ -81,7 +97,7 @@
       <option name="presentableId" value="Default" />
       <updated>1688458676378</updated>
       <workItem from="1688458677830" duration="64000" />
-      <workItem from="1688458925752" duration="1536000" />
+      <workItem from="1688458925752" duration="8786000" />
     </task>
     <servers />
   </component>

@@ -1,7 +1,7 @@
 package com.example.swithserver.global.security.auth;
 
-import com.example.swithserver.domain.user.domain.repository.UserRepository;
-import com.example.swithserver.domain.user.exception.UserNotFoundException;
+import com.example.swithserver.domain.student.domain.repository.StudentRepository;
+import com.example.swithserver.domain.student.exception.UserNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -12,12 +12,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class AuthDetailsService implements UserDetailsService {
 
-    private final UserRepository userRepository;
+    private final StudentRepository userRepository;
 
     @Override
-    public UserDetails loadUserByUsername(String accountId) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String id) throws UsernameNotFoundException {
         return new AuthDetails(
-                userRepository.findByAccountId(accountId)
+                userRepository.findById(id)
                         .orElseThrow(() -> UserNotFoundException.EXCEPTION)
         );
     }
