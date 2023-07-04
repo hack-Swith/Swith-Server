@@ -15,6 +15,7 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @Entity
 public class Inspection {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

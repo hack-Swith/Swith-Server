@@ -16,17 +16,18 @@ public class Student {
     @Id
     @Column(length = 10)
     private String id;
+
     @Column(length = 60, nullable = false)
     private String password;
 
     @Column(length = 10, nullable = false)
     private String name;
 
-    @Column(nullable = false)
-    private Integer classroom;
+    @Column(nullable = false, columnDefinition = "TINYINT")
+    private int classroom;
 
-    @Column(nullable = false)
-    private Integer number;
+    @Column(nullable = false, columnDefinition = "TINYINT")
+    private int number;
 
     @Column(length = 10, nullable = false)
     private String major;
@@ -35,9 +36,4 @@ public class Student {
     @JoinColumn(name = "school", nullable = false)
     private School school;
 
-    @Builder
-    public Student(String id, String password) {
-        this.id = id;
-        this.password = password;
-    }
 }

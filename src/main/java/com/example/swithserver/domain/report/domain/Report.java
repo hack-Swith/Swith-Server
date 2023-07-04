@@ -29,4 +29,11 @@ public class Report {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "student", nullable = false)
     private Student student;
+
+    public Report(String company, String content, Student student) {
+        this.date = LocalDate.now();
+        this.company = company;
+        this.content = content;
+        this.student = student;
+    }
 }
