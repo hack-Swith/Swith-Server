@@ -1,4 +1,4 @@
-package com.example.swithserver.domain.teacher.domain.exception.error;
+package com.example.swithserver.domain.teacher.exception.error;
 
 import com.example.swithserver.global.error.ErrorCode;
 

@@ -1,7 +1,7 @@
-package com.example.swithserver.domain.teacher.domain.exception;
+package com.example.swithserver.domain.teacher.exception;
 
 
-import com.example.swithserver.domain.teacher.domain.exception.error.TeacherErrorCode;
+import com.example.swithserver.domain.teacher.exception.error.TeacherErrorCode;
 import com.example.swithserver.global.error.CustomException;
 
 public class PasswordMismatchException extends CustomException {
