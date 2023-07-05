@@ -1,8 +1,6 @@
 package com.example.swithserver.domain.student.domain;
 
-import com.example.swithserver.domain.school.domain.School;
 import lombok.AccessLevel;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -32,8 +30,17 @@ public class Student {
     @Column(length = 10, nullable = false)
     private String major;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "school", nullable = false)
-    private School school;
+    @Column(length = 20, nullable = false)
+    private String company;
+
+    @Column(nullable = false)
+    private Long schoolId;
+
+    @Column(nullable = false)
+    private Boolean isInspection;
+
+    public void updateIsInspection() {
+        this.isInspection = true;
+    }
 
 }

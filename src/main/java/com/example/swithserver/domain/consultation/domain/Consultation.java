@@ -1,7 +1,6 @@
 package com.example.swithserver.domain.consultation.domain;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,6 +14,7 @@ import javax.persistence.ManyToOne;
 import com.example.swithserver.domain.student.domain.Student;
 
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -27,23 +27,45 @@ public class Consultation {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	private String date;
+	@Column(nullable = false)
+	private LocalDate date;
+
+	@Column(nullable = false, length = 50)
+	private String title;
 
 	@Column(nullable = false, length = 5000)
 	private String content;
 
+
 	@Column(nullable = false, length = 10)
-	private String teacherId;
+	private Boolean isStatus;
+
+	@Column(length = 10)
+	private String teacherName;
+
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "student", nullable = false)
 	private Student student;
 
-	public Consultation(String content, String teacherId, Student student) {
-		this.date = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy년 M월 d일"));
+	@Column(nullable = false)
+	private Long schoolId;
+
+
+	@Builder
+	private Consultation(String title, String content, Student student) {
+		this.date = LocalDate.now();
+		this.isStatus = false;
+
+		this.title = title;
 		this.content = content;
-		this.teacherId = teacherId;
 		this.student = student;
+		this.schoolId = student.getSchoolId();
+	}
+
+	public void updateStatus(String teacherName) {
+		this.isStatus = true;
+		this.teacherName = teacherName;
 	}
 
 }

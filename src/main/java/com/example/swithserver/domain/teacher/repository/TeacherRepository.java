@@ -1,4 +1,4 @@
-package com.example.swithserver.domain.teacher.domain.repository;
+package com.example.swithserver.domain.teacher.repository;
 
 import com.example.swithserver.domain.teacher.domain.Teacher;
 import org.springframework.data.repository.CrudRepository;

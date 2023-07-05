@@ -3,12 +3,12 @@ package com.example.swithserver.domain.inspection.domain;
 import com.example.swithserver.domain.inspection.presentation.dto.request.CreateInspectionRequest;
 import com.example.swithserver.domain.student.domain.Student;
 import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -61,15 +61,18 @@ public class Inspection {
     @Column(nullable = false)
     private boolean hasExperiencedInappropriateCommentsOrActions;
 
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
     private Score score;
 
-    private LocalDate date;
-    private String company;
+    private String date;
 
 
     @ManyToOne
     @JoinColumn(name = "student_id", nullable = false)
     private Student student;
+
+    private Long schoolId;
 
     public Inspection(CreateInspectionRequest request, Student student) {
         this.didAdhereToSafetyRegulations = request.isDidAdhereToSafetyRegulations();
@@ -86,9 +89,9 @@ public class Inspection {
         this.isUncomfortableAtWorkDueToWitnessingBullying = request.isUncomfortableAtWorkDueToWitnessingBullying();
         this.hasExperiencedInappropriateCommentsOrActions = request.isHasExperiencedInappropriateCommentsOrActions();
         this.hasExperiencedSexualHarassment = request.isHasExperiencedSexualHarassment();
-        this.date = LocalDate.now();
+        this.date = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy년 M월 d일"));;
         this.student = student;
-        this.company = request.getCompany();
+        this.schoolId = student.getSchoolId();
         this.score = checkScore(request);
     }
 
