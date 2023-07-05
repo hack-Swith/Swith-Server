@@ -4,8 +4,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.example.swithserver.domain.teacher.domain.exception.UserNotFoundException;
-import com.example.swithserver.domain.teacher.domain.repository.TeacherRepository;
+import com.example.swithserver.domain.teacher.exception.UserNotFoundException;
+import com.example.swithserver.domain.teacher.repository.TeacherRepository;
 
 import lombok.RequiredArgsConstructor;
 
