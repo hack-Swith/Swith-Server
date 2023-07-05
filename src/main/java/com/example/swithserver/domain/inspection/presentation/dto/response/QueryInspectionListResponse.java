@@ -11,5 +11,5 @@ public class QueryInspectionListResponse {
     private String name;
     private int classroom;
     private int number;
-    private List<QueryInspectionInfoResponse> responseList;
+    private List<QueryInspectionResponse> responseList;
 }
