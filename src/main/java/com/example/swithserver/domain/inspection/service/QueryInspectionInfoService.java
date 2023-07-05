@@ -31,6 +31,8 @@ public class QueryInspectionInfoService {
                 .receivedTrainingOnHazardAwarenessAndManagement(inspection.isReceivedTrainingOnHazardAwarenessAndManagement())
                 .wasSafetyManagementAndTrainingAdequate(inspection.isWasSafetyManagementAndTrainingAdequate())
                 .sufficientPreventiveMeasuresTaken(inspection.isSufficientPreventiveMeasuresTaken())
+                .wereColleaguesCompliantWithSafetyRegulations(inspection.isWereColleaguesCompliantWithSafetyRegulations())
+                .wereThereAreasRequiringImprovementInSafety(inspection.isWereThereAreasRequiringImprovementInSafety())
                 .build();
     }
 }
