@@ -1,6 +1,7 @@
 package com.example.swithserver.domain.inspection.domain;
 
 import com.example.swithserver.domain.inspection.presentation.dto.request.CreateInspectionRequest;
+import com.example.swithserver.domain.student.domain.Student;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -60,9 +61,14 @@ public class Inspection {
     @Column(nullable = false)
     private boolean hasExperiencedInappropriateCommentsOrActions;
 
-    private Integer score;
+    private Score score;
 
-    public Inspection(CreateInspectionRequest request) {
+
+    @ManyToOne
+    @JoinColumn(name = "student_id", nullable = false)
+    private Student student;
+
+    public Inspection(CreateInspectionRequest request, Student student) {
         this.didAdhereToSafetyRegulations = request.isDidAdhereToSafetyRegulations();
         this.didFollowSafetyProcedures = request.isDidFollowSafetyProcedures();
         this.wereColleaguesCompliantWithSafetyRegulations = request.isWereColleaguesCompliantWithSafetyRegulations();
@@ -76,6 +82,63 @@ public class Inspection {
         this.hasExperiencedBullying = request.isHasExperiencedBullying();
         this.isUncomfortableAtWorkDueToWitnessingBullying = request.isUncomfortableAtWorkDueToWitnessingBullying();
         this.hasExperiencedInappropriateCommentsOrActions = request.isHasExperiencedInappropriateCommentsOrActions();
-        this.score = request.getScore();
+        this.student = student;
+        this.score = checkScore(request);
+    }
+
+    private Score checkScore(CreateInspectionRequest request) {
+        int count = 0;
+        if (request.isDidAdhereToSafetyRegulations())
+            count++;
+
+        if (request.isDidFollowSafetyProcedures())
+            count++;
+
+        if (request.isWereColleaguesCompliantWithSafetyRegulations())
+            count++;
+
+        if (request.isWasSafetyManagementAndTrainingAdequate())
+            count++;
+
+        if (request.isWereThereAreasRequiringImprovementInSafety())
+            count++;
+
+        if (request.isHasPotentialHazards())
+            count++;
+
+        if (request.isFeltUnsafeWorkingEnvironment())
+            count++;
+
+        if (request.isReceivedTrainingOnHazardAwarenessAndManagement())
+            count++;
+
+        if (request.isSufficientPreventiveMeasuresTaken())
+            count++;
+
+        if (request.isPositiveWorkEnvironment())
+            count++;
+
+        if (request.isHasExperiencedBullying())
+            count++;
+
+        if (request.isUncomfortableAtWorkDueToWitnessingBullying())
+            count++;
+
+        if (request.isHasExperiencedSexualHarassment())
+            count++;
+
+        if (request.isHasExperiencedInappropriateCommentsOrActions())
+            count++;
+
+        if(count >= 10 && count <= 14) {
+            return Score.VERY_DANGER;
+        }
+        else if (count >= 6 && count <= 9) {
+            return Score.DANGER;
+        }
+        else if (count >= 3 && count <= 5) {
+            return Score.NORMAL;
+        }
+        return Score.SAFE;
     }
 }

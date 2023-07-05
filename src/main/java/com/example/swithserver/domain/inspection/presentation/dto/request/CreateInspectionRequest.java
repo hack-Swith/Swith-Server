@@ -33,6 +33,4 @@ public class CreateInspectionRequest {
     private boolean hasExperiencedSexualHarassment;
 
     private boolean hasExperiencedInappropriateCommentsOrActions;
-
-    private Integer score;
 }
