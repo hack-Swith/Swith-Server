@@ -1,12 +1,14 @@
-package com.example.swithserver.domain.inspection.presentation.dto.request;
+package com.example.swithserver.domain.inspection.presentation.dto.response;
 
+import com.example.swithserver.domain.inspection.domain.Score;
+import lombok.Builder;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
+
+import java.time.LocalDate;
 
 @Getter
-@NoArgsConstructor
-public class CreateInspectionRequest {
-    private String company;
+@Builder
+public class QueryInspectionInfoResponse {
     private boolean didAdhereToSafetyRegulations;
 
     private boolean didFollowSafetyProcedures;
@@ -34,4 +36,7 @@ public class CreateInspectionRequest {
     private boolean hasExperiencedSexualHarassment;
 
     private boolean hasExperiencedInappropriateCommentsOrActions;
+    private Score score;
+    private LocalDate date;
+    private String company;
 }

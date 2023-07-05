@@ -8,10 +8,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor
 @Entity
 public class Inspection {
 
@@ -63,6 +63,9 @@ public class Inspection {
 
     private Score score;
 
+    private LocalDate date;
+    private String company;
+
 
     @ManyToOne
     @JoinColumn(name = "student_id", nullable = false)
@@ -82,7 +85,10 @@ public class Inspection {
         this.hasExperiencedBullying = request.isHasExperiencedBullying();
         this.isUncomfortableAtWorkDueToWitnessingBullying = request.isUncomfortableAtWorkDueToWitnessingBullying();
         this.hasExperiencedInappropriateCommentsOrActions = request.isHasExperiencedInappropriateCommentsOrActions();
+        this.hasExperiencedSexualHarassment = request.isHasExperiencedSexualHarassment();
+        this.date = LocalDate.now();
         this.student = student;
+        this.company = request.getCompany();
         this.score = checkScore(request);
     }
 
